@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Log;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class LogController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
         $logs = Log::all();
         return view('logs.index', ['logs' => $logs]);
